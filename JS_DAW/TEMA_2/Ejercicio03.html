@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 Obligatorio</title>
+    <style>
+        #boton{
+            font-family:Arial;
+            font-size:10pt;
+            width:200px;
+            height:30px;
+            background:#777777;
+            color:#fff444;
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cree un script que recoja el valor de la anchura y la altura total de la pantalla del
+usuario y calcule su diagonal. Recuerde: diagonal = RAIZ(anchura^2 + altura^2) -->
+
+    <h1>Medidas de la pantalla</h1>
+
+    <p>La anchura de tu pantalla es de: <span id="anchura"></span> pixeles</p> <!--Mostrará en pixeles la anchura de la pantalla del usuario -->
+
+    <p>La altura de tu pantalla es de: <span id="altura"></span> pixeles</p> <!--Mostrará en pixeles la altura de la pantalla del usuario -->
+
+    <p>La diagonal de tu pantalla es de: <span id="diagonal"></span> pixeles</p> <!--Mostrará en pixeles la diagonal de la pantalla del usuario -->
+
+    <input type="button" id=boton value="Actualizar" onclick="location.reload()"/> <!-- Boton de recarga de página, no es necesario -->
+
+    <script type="text/javascript">
+
+        var anchoPantalla = document.getElementById("anchura").innerHTML = screen.width; //en una variable guardamos la anchura en px de la pantalla del usuario, ademas la muestro en el html
+
+        var altoPantalla = document.getElementById("altura").innerHTML = screen.height; //en una variable guardamos la altura en px de la pantalla del usuario, ademas la muestro en el html
+
+        var diagonal = Math.sqrt(Math.pow(anchoPantalla,2) + Math.pow(altoPantalla,2)); //en una variable calculamos según la fórmula dada la diagonal en px de la pantalla
+
+        document.getElementById("diagonal").innerHTML = Math.round(diagonal*100)/100; //mostramos en el html el resultado del calculo de la diagonal redondeandolo a dos decimales
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 Obligatorio</title>
+    <style>
+        #boton{
+            font-family:Arial;
+            font-size:10pt;
+            width:200px;
+            height:30px;
+            background:#777777;
+            color:#fff444;
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cree una página web que solicite una cadena de texto al usuario y devuelva la
+longitud de dicha cadena. -->
+
+    <h1>Longitud de cadena</h1>
+
+    <p>Has introducido: <span id="texto_usuario"></span></p> <!--Mostrará el texto introducido por el usuario -->
+
+    <p>La longitud es de: <span id="resultado"></span> caracteres</p> <!--Mostrará el número de caracteres introducido por el usuario -->
+
+    <input type="button" id=boton value="Actualizar" onclick="location.reload()"/> <!-- Boton de recarga de página -->
+
+    <script>
+
+        var cadena = prompt("Escribe lo que quieras..."); //almaceno en una variable el texto pedido al usuario por mensaje
+
+        var mensaje;
+
+        if(cadena==null || cadena == ""){
+
+            cadena = "Has cancelado o no has introducido texto en el cuadro de dialogo";
+            document.getElementById("texto_usuario").innerHTML=cadena.toUpperCase(); 
+            document.getElementById("resultado").innerHTML=0;
+
+        }else{
+
+            mensaje=cadena;
+            document.getElementById("texto_usuario").innerHTML=mensaje.toUpperCase(); //muestro el texto en mayúsculas en el documento html, es opcional
+            document.getElementById("resultado").innerHTML=mensaje.length; //cuento el número de caracteres del texto introducido por el usuario y lo muestro en el html
+        }        
+
+    </script>
+    
+</body>
+</html>

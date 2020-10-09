@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8"/>
+
+<title>Ejercicio 7 - Factorial de un número entero</title>
+
+<script type="text/javascript">
+/*Declaramos una variable llamada numero y la inicializamos 
+con el resultado de la función prompt(), que le pide al usuario 
+que introduzca un número para calcular el factorial 
+de dicho número*/
+
+var numero = prompt("Introduzca un número para calcular el factorial: ");
+
+
+/*Declaramos una variable llamada resultado, en la que guardaremos 
+el resultado de calcular el factorial */
+
+var resultado = 1;
+
+var index = 1;
+
+while(index <= numero){
+
+    resultado = resultado * index;
+
+    index++;
+
+}
+
+/*Con una función alert() damos el siguiente mensaje: El factorial de x! es y  */
+/*Por ejemplo si el usuario pidió calculara el factorial de 3, el mensaje debe ser:
+                El factorial de 3! es 6       */
+
+alert("El factorial de " +numero+"! " +" es " +resultado);
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

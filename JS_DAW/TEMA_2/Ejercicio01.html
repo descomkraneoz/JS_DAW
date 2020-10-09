@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 Obligatorio</title>
+    <style>
+        #boton{
+            font-family:Arial;
+            font-size:10pt;
+            width:200px;
+            height:30px;
+            background:#777777;
+            color:#fff444;
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cree una página web con un script que calcule los milisegundos que han pasado
+desde las 00:00 h del 1 de enero del 2000 hasta la fecha actual.  -->
+
+    <h1>Cálculo en milisegundos</h1>
+
+    <h2>desde las 00:00 del 1 de enero del 2000 hasta la fecha actual</h2>
+
+    <p><span id="fecha_calculada"></span><span> milisegundos</span></p> <!-- etiqueta html que cambiaremos con el script para mostrar los resultados -->
+
+    <input type="button" id=boton value="Actualizar" onclick="location.reload()"/> <!-- botón para recargar la página html, así recalcula los milisegundos -->
+
+    <!-- Inicio del script para calcular los milisegundos -->
+    <script>
+
+        var fecha_inicial = new Date(2000,0,0,0,0,0,0); /*variable que almacena la fecha desde la cual quiero hacer el calculo, 
+        datos que pide: (AAAA, MM, DD, hora, minutos, segundos, milisegundos), Importante recordar que empieza a contar desde 0, por tanto Enero es el mes 0 */
+
+        var fecha_actual = new Date(); //variable que almacena la fecha actual
+
+        var diferencia = fecha_actual.getTime() - fecha_inicial.getTime(); /*calculo de la diferencia entre la fecha actual y la pasada, 
+        convertido en milisegundos gracias a la función getTime() */
+
+        document.getElementById("fecha_calculada").innerHTML=diferencia; //con esta linea le digo donde escribir el resultado en el documento html 
+
+    </script>
+    <!-- Final del script para calcular los milisegundos -->
+    
+</body>
+</html>
